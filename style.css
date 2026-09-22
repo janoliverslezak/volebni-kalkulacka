@@ -25,42 +25,95 @@ body {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     text-align: center;
     overflow: hidden;
-    border-top: 6px solid #1a5b92;
+    border-top: 6px solid #008080; /* Živá petrolejová / teal na vrchu */
 }
 
-/* Úvodní fotka (zobrazí se celá, bez ořezu) */
+/* Animace a přechody */
+.fade-transition {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+.fade-out {
+    opacity: 0;
+}
+
 .header-image {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 3px solid #f1c40f;
+    border-bottom: 3px solid #ff7f50; /* Živá korálově oranžová */
 }
 
-/* Fotky u otázek (pevně oříznuté na stejnou výšku, aby neuskakovala tlačítka) */
 .question-image {
     width: 100%;
     height: 240px;
     object-fit: cover;
     display: block;
-    border-bottom: 3px solid #f1c40f;
+    border-bottom: 3px solid #ff7f50;
 }
 
 .content-padding {
     padding: 40px 30px;
 }
 
+/* Styly pro logo a slogan na úvodu */
+.campaign-logo-wrapper {
+    margin-bottom: 15px;
+}
+
+.intro-logo {
+    max-width: 180px;
+    height: auto;
+    display: inline-block;
+}
+
+.campaign-slogan {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #008080;
+    background-color: #e6f2f2;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-left: 4px solid #ff7f50;
+}
+
 #intro-container h1, h2#question-text, h2#detail-title, #about-modal h2, #summary-container h2 {
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #1a5b92;
+    color: #008080;
 }
 
-#intro-container h1, #about-modal h2, #summary-container h2 { font-size: 1.8rem; }
+#intro-container h1, #about-modal h2, #summary-container h2 { font-size: 1.8rem; margin-bottom: 15px; }
 h2#question-text { line-height: 1.5; min-height: 80px; margin-top: 10px; }
 
+#progress-container {
+    width: 100%;
+    background-color: #e4e9f0;
+    border-radius: 8px;
+    height: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #008080;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+#progress-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
 .intro-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
     color: #4a5568;
@@ -96,21 +149,39 @@ button {
 button:active { transform: scale(0.98); }
 
 #btn-start, #btn-show-results {
-    background-color: #1a5b92;
+    background-color: #008080;
     color: white;
     font-size: 1.15rem;
     padding: 18px 20px;
-    box-shadow: 0 4px 15px rgba(26, 91, 146, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.25);
     margin-top: 15px;
 }
-#btn-start:hover, #btn-show-results:hover { background-color: #124068; transform: translateY(-2px); }
+#btn-start:hover, #btn-show-results:hover { background-color: #006666; transform: translateY(-2px); }
 
 #btn-about {
     background-color: transparent;
-    color: #1a5b92;
-    border: 2px solid #1a5b92;
+    color: #008080;
+    border: 2px solid #008080;
 }
-#btn-about:hover { background-color: #f0f4f8; }
+#btn-about:hover { background-color: #e6f2f2; }
+
+#btn-share {
+    background-color: #27ae60;
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+#btn-share:hover { background-color: #219653; transform: translateY(-2px); }
+
+#btn-restart {
+    background-color: transparent;
+    color: #008080;
+    border: 2px solid #008080;
+    font-size: 1.1rem;
+    margin-top: 15px;
+}
+#btn-restart:hover { background-color: #e6f2f2; transform: translateY(-2px); }
 
 .nav-buttons-top {
     display: flex;
@@ -121,14 +192,14 @@ button:active { transform: scale(0.98); }
 
 #btn-prev, #btn-back-to-summary {
     background-color: transparent;
-    color: #1a5b92;
-    border: 2px solid #1a5b92;
+    color: #008080;
+    border: 2px solid #008080;
     padding: 8px 12px;
     font-size: 0.85rem;
     width: auto;
     flex: 1;
 }
-#btn-prev:hover, #btn-back-to-summary:hover { background-color: #f0f4f8; }
+#btn-prev:hover, #btn-back-to-summary:hover { background-color: #e6f2f2; }
 
 .about-text {
     text-align: left;
@@ -142,29 +213,43 @@ button:active { transform: scale(0.98); }
 }
 
 .about-text a {
-    color: #1a5b92;
+    color: #008080;
     font-weight: 600;
     text-decoration: underline;
 }
 
 #btn-close-about {
-    background-color: #1a5b92;
+    background-color: #008080;
     color: white;
 }
-#btn-close-about:hover { background-color: #124068; }
+#btn-close-about:hover { background-color: #006666; }
 
-#btn-yes { background-color: #27ae60; color: white; }
-#btn-yes:hover { background-color: #219653; }
-#btn-rather-yes { background-color: #ebf7f0; color: #27ae60; border-color: #27ae60; }
-#btn-rather-yes:hover { background-color: #d1ebd9; }
+/* --- TLAČÍTKA ODPOVĚDÍ (Živá, moderní paleta) --- */
+
+/* ANO - Výrazná petrolejová / teal */
+#btn-yes { background-color: #008080; color: white; border-color: #008080; }
+#btn-yes:hover { background-color: #006666; }
+
+/* spíše ANO - Světlý petrolejový nádech */
+#btn-rather-yes { background-color: #e6f2f2; color: #006666; border-color: #008080; }
+#btn-rather-yes:hover { background-color: #cce6e6; }
+
+/* neutrální - Čistá světle šedá */
 #btn-neutral { background-color: #f8f9fa; color: #6c757d; border-color: #dee2e6; }
 #btn-neutral:hover { background-color: #e9ecef; }
-#btn-rather-no { background-color: #fdf5e6; color: #f39c12; border-color: #f39c12; }
-#btn-rather-no:hover { background-color: #faebd1; }
-#btn-no { background-color: #f39c12; color: white; }
-#btn-no:hover { background-color: #d68910; }
-#btn-skip { background-color: transparent; color: #1a5b92; border: 2px solid #1a5b92; margin-top: 15px; }
-#btn-skip:hover { background-color: #f0f4f8; }
+
+/* spíše NE - Světlý oranžový nádech */
+#btn-rather-no { background-color: #fff5f0; color: #d35400; border-color: #ff7f50; }
+#btn-rather-no:hover { background-color: #ffe8e0; }
+
+/* NE - Živá korálově oranžová */
+#btn-no { background-color: #ff7f50; color: white; border-color: #ff7f50; }
+#btn-no:hover { background-color: #e66b3d; }
+
+/* Tlačítko nevím / přeskočit */
+#btn-skip { background-color: transparent; color: #008080; border: 2px solid #008080; margin-top: 15px; }
+#btn-skip:hover { background-color: #e6f2f2; }
+
 
 #summary-list {
     text-align: left;
@@ -184,8 +269,8 @@ button:active { transform: scale(0.98); }
     transition: all 0.2s;
 }
 .summary-item:hover {
-    border-color: #1a5b92;
-    background: #f0f4f8;
+    border-color: #008080;
+    background: #e6f2f2;
 }
 .summary-q {
     font-size: 0.85rem;
@@ -195,7 +280,7 @@ button:active { transform: scale(0.98); }
 }
 .summary-a {
     font-size: 0.9rem;
-    color: #1a5b92;
+    color: #008080;
     font-weight: 700;
 }
 
@@ -209,7 +294,7 @@ button:active { transform: scale(0.98); }
     font-size: 1.15rem;
     font-weight: 600;
     border: 1px solid #e0e0e0;
-    border-left: 6px solid #1a5b92;
+    border-left: 6px solid #008080;
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -217,17 +302,17 @@ button:active { transform: scale(0.98); }
 #question-container p.result-item:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-    border-left-color: #f1c40f;
+    border-left-color: #ff7f50;
 }
 
 #btn-back {
     background-color: transparent;
-    color: #1a5b92;
-    border: 2px solid #1a5b92;
+    color: #008080;
+    border: 2px solid #008080;
     margin-bottom: 25px;
     padding: 12px;
 }
-#btn-back:hover { background-color: #f0f4f8; }
+#btn-back:hover { background-color: #e6f2f2; }
 
 .comparison-item {
     text-align: left;
@@ -257,6 +342,8 @@ button:active { transform: scale(0.98); }
     background: #f8f9fa;
 }
 .answer-badge { font-weight: 700; }
-.match-good { color: #27ae60; }
-.match-bad { color: #e74c3c; }
-.match-neutral { color: #7f8c8d; }
+
+/* Barvy shody v detailu */
+.match-good { color: #008080; } 
+.match-bad { color: #d35400; }  
+.match-neutral { color: #95a5a6; }

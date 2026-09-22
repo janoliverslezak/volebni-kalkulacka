@@ -5,10 +5,10 @@ const otazky = [
     "4. Větší developerské projekty by měly být podmíněny finančním nebo jiným příspěvkem investora na veřejnou infrastrukturu.",
     "5. Město by mělo prostřednictvím územního plánu aktivně bránit dalšímu výraznému zahušťování stávající zástavby.",
     "6. Město by mělo systematicky vykupovat pozemky důležité pro jeho budoucí rozvoj, i pokud pro ně zatím nemá konkrétní projekt.",
-    "7. Při rekonstrukcích ulic by město měло systematicky budovat chodníky i za cenu omezení prostoru pro parkování automobilů.",
+    "7. Při rekonstrukcích ulic by město mělo systematicky budovat chodníky i za cenu omezení prostoru pro parkování automobilů.",
     "8. Město by mělo více investovat do bezpečných cest dětí do školy, i kdyby to znamenalo další dopravní omezení v okolí škol.",
     "9. V obci by měla být plošně zavedena zona 30 km/h.",
-    "10. Město by měло zavést pravidelnou městskou autobusovou linku propojující jednotlivé části Černošic.",
+    "10. Město by mělo zavést pravidelnou městskou autobusovou linku propojující jednotlivé části Černošic.",
     "11. Město by mělo usilovat o přímé autobusové spojení Černošic s Prahou jako alternativu k železnici.",
     "12. Město by mělo usilovat o obnovení přívozu mezi Černošicemi a Lipenci.",
     "13. Město by mělo aktivně podporovat sdílená kola, elektrokola a carsharing, včetně vyhrazení potřebných míst ve veřejném prostoru.",
@@ -30,17 +30,17 @@ const otazky = [
 ];
 
 const strany = [
-    { nazev: "1", odpovedi: [2, 1, -1, 2, 2, 0, 1, 2, -2, 1, 0, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 0, 2, 1] },
-    { nazev: "2", odpovedi: [-1, 2, 2, 1, 1, 1, -2, -1, -2, -1, 2, 0, -1, 2, 1, 1, 2, 2, 1, 1, 0, -1, 2, 1, 1, 1, 1, -1] },
-    { nazev: "3", odpovedi: [1, 1, -2, -1, 0, -1, 2, 1, 1, 2, -1, 2, 1, -1, 0, 1, 1, -1, -2, 0, 2, 1, -1, -2, 2, 2, 1, 2] },
-    { nazev: "4", odpovedi: [0, 0, 1, 2, 2, 2, 1, 2, 1, 0, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1] },
-    { nazev: "5", odpovedi: [2, -1, -1, 0, -2, -1, -1, -1, 2, 1, -2, -1, 0, -1, 1, 0, 1, -2, 1, -1, -1, 0, -2, -1, 0, -1, -1, -2] }
+    { nazev: "Trojlístek", odpovedi: [2, 1, -1, 2, 2, 0, 1, 2, -2, 1, 0, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 0, 2, 1] },
+    { nazev: "Věci Černošické", odpovedi: [-1, 2, 2, 1, 1, 1, -2, -1, -2, -1, 2, 0, -1, 2, 1, 1, 2, 2, 1, 1, 0, -1, 2, 1, 1, 1, 1, -1] },
+    { nazev: "TOP 09", odpovedi: [1, 1, -2, -1, 0, -1, 2, 1, 1, 2, -1, 2, 1, -1, 0, 1, 1, -1, -2, 0, 2, 1, -1, -2, 2, 2, 1, 2] },
+    { nazev: "ODS", odpovedi: [0, 0, 1, 2, 2, 2, 1, 2, 1, 0, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1] },
+    { nazev: "Futurista", odpovedi: [2, -1, -1, 0, -2, -1, -1, -1, 2, 1, -2, -1, 0, -1, 1, 0, 1, -2, 1, -1, -1, 0, -2, -1, 0, -1, -1, -2] }
 ];
 
 const textOdpovedi = {
     2: "ANO",
     1: "spíše ANO",
-    0: "neutrální / přeskočeno",
+    0: "neutrální / nevím",
     "-1": "spíše NE",
     "-2": "NE"
 };
@@ -58,6 +58,9 @@ const summaryList = document.getElementById("summary-list");
 const detailContainer = document.getElementById("detail-container");
 const detailContent = document.getElementById("detail-content");
 const detailTitle = document.getElementById("detail-title");
+
+const progressBar = document.getElementById("progress-bar");
+const progressText = document.getElementById("progress-text");
 
 const btnStart = document.getElementById("btn-start");
 const btnAbout = document.getElementById("btn-about");
@@ -99,29 +102,40 @@ btnStart.addEventListener("click", () => {
 btnBack.addEventListener("click", () => {
     detailContainer.style.display = "none";
     questionContainer.style.display = "block";
-    mainImage.className = "header-image";
+    mainImage.className = "header-image fade-transition";
     mainImage.src = "IMG-20260908-WA0012.jpg";
 });
 
 function zobrazOtazku() {
     if (aktualniOtazka < otazky.length) {
-        questionText.innerText = otazky[aktualniOtazka];
-        
-        // Nastavíme třídu pro oříznutou fotku otázky a zkusíme ji načíst
-        mainImage.className = "question-image";
-        mainImage.src = "otazka_" + (aktualniOtazka + 1) + ".jpg";
-        
-        if (zPojmenovanehoPrehledu) {
-            btnBackToSummary.style.display = "block";
-            btnPrev.style.display = "none";
-        } else {
-            btnBackToSummary.style.display = "none";
-            if (aktualniOtazka > 0) {
-                btnPrev.style.display = "block";
-            } else {
+        questionText.classList.add("fade-out");
+        mainImage.classList.add("fade-out");
+
+        setTimeout(() => {
+            questionText.innerText = otazky[aktualniOtazka];
+            mainImage.className = "question-image fade-transition";
+            mainImage.src = "otazka_" + (aktualniOtazka + 1) + ".jpg";
+            
+            let progressPercent = (aktualniOtazka / otazky.length) * 100;
+            progressBar.style.width = progressPercent + "%";
+            progressText.innerText = `Otázka ${aktualniOtazka + 1} z ${otazky.length}`;
+
+            if (zPojmenovanehoPrehledu) {
+                btnBackToSummary.style.display = "block";
                 btnPrev.style.display = "none";
+            } else {
+                btnBackToSummary.style.display = "none";
+                if (aktualniOtazka > 0) {
+                    btnPrev.style.display = "block";
+                } else {
+                    btnPrev.style.display = "none";
+                }
             }
-        }
+
+            questionText.classList.remove("fade-out");
+            mainImage.classList.remove("fade-out");
+        }, 200);
+        
     } else {
         zobrazShrnuti();
     }
@@ -160,8 +174,7 @@ function zobrazShrnuti() {
     questionContainer.style.display = "none";
     summaryContainer.style.display = "block";
     
-    // Vrátíme třídu úvodního banneru (celé logo)
-    mainImage.className = "header-image";
+    mainImage.className = "header-image fade-transition";
     mainImage.src = "IMG-20260908-WA0012.jpg";
     
     summaryList.innerHTML = "";
@@ -192,8 +205,12 @@ btnShowResults.addEventListener("click", () => {
 });
 
 function ukazVysledky() {
-    mainImage.className = "header-image";
+    mainImage.className = "header-image fade-transition";
     mainImage.src = "IMG-20260908-WA0012.jpg";
+    
+    progressBar.parentElement.style.display = "none";
+    progressText.style.display = "none";
+    
     questionContainer.innerHTML = "<h2>Tvoje výsledky:</h2><p style='font-size: 0.95rem; color: #6c757d; margin-bottom: 20px; text-align: center;'>Kliknutím na stranu zobrazíte detailní porovnání.</p>";
     
     let vysledky = strany.map(strana => {
@@ -221,6 +238,43 @@ function ukazVysledky() {
         btnStrana.addEventListener("click", () => zobrazDetail(v.nazev));
         questionContainer.appendChild(btnStrana);
     });
+
+    let btnShare = document.createElement("button");
+    btnShare.id = "btn-share";
+    btnShare.innerText = "Sdílet můj výsledek";
+    btnShare.addEventListener("click", () => {
+        let nejlepsiStrana = vysledky[0];
+        let shareData = {
+            title: 'Volební kalkulačka Černošice 2026',
+            text: `Moje shoda v komunálních volbách s programem sdružení ${nejlepsiStrana.nazev} je ${nejlepsiStrana.procenta} %! Zkus si černošickou volební kalkulačku taky:`,
+            url: window.location.href 
+        };
+
+        if (navigator.share) {
+            navigator.share(shareData).catch(err => console.log('Chyba při sdílení:', err));
+        } else {
+            navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+            alert("Váš výsledek a odkaz na kalkulačku byl zkopírován. Můžete ho vložit do jakékoliv zprávy (Ctrl+V)!");
+        }
+    });
+    questionContainer.appendChild(btnShare);
+
+    let btnRestart = document.createElement("button");
+    btnRestart.id = "btn-restart";
+    btnRestart.innerText = "Vrátit se na začátek";
+    btnRestart.addEventListener("click", () => {
+        aktualniOtazka = 0;
+        odpovediUzivatele = [];
+        zPojmenovanehoPrehledu = false;
+        
+        questionContainer.style.display = "none";
+        introContainer.style.display = "block";
+        
+        progressBar.style.width = "0%";
+        progressBar.parentElement.style.display = "block";
+        progressText.style.display = "block";
+    });
+    questionContainer.appendChild(btnRestart);
 }
 
 function zobrazDetail(nazevStrany) {

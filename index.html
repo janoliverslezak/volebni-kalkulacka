@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volební kalkulačka Černošice 2026</title>
+    
+    <!-- Karta pro sociální sítě -->
+    <meta property="og:title" content="Volební kalkulačka Černošice 2026">
+    <meta property="og:description" content="Zjistěte, jak se vaše názory na rozvoj a budoucnost Černošic shodují s postoji kandidujících sdružení.">
+    <meta property="og:image" content="https://TVOJE_ADRESA.github.io/volebni-kalkulacka/IMG-20260908-WA0012.jpg">
+    <meta property="og:url" content="https://TVOJE_ADRESA.github.io/volebni-kalkulacka/">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Úvodní obrázek / banner s logem (třída header-image = zobrazí se celý) -->
-        <img id="main-image" src="IMG-20260908-WA0012.jpg" alt="Trojlístek Černošice" class="header-image">
+        <!-- Hlavní banner nahoře -->
+        <img id="main-image" src="IMG-20260908-WA0012.jpg" alt="Trojlístek Černošice" class="header-image fade-transition">
         
         <div class="content-padding">
             <!-- Úvodní obrazovka -->
             <div id="intro-container">
+                <!-- Vložení reálného loga -->
+                <div class="campaign-logo-wrapper">
+                    <img src="logo.png" alt="Logo Trojlístek" class="intro-logo">
+                </div>
+                
                 <h1 id="main-title">Volební kalkulačka 2026</h1>
-                <p class="intro-text">Vítejte! Zjistěte, jak se vaše názory na rozvoj, dopravu a budoucnost Černošic, Mokropes a Vráže shodují s postoji kandidujících sdružení.</p>
-                <p class="intro-text">Připravili jsme 28 otázek vycházejících z aktuálních témat našeho města. Vyplnění zabere jen pár minut.</p>
+                
+                <!-- Chytlavý kampaňový slogan -->
+                <p class="campaign-slogan">"Volte s přehledem. Zjistěte, kdo má opravdu stejné názory na rozvoj našeho města jako vy!"</p>
+                
+                <p class="intro-text">Připravili jsme pro vás 28 klíčových otázek vycházejících z reálných témat Černošic, Mokropes a Vráže. Porovnejte svůj pohled s programy kandidujících sdružení.</p>
                 
                 <div class="intro-buttons">
                     <button id="btn-start">ZAČÍT KALKULAČKU</button>
@@ -42,18 +58,24 @@
                     <button id="btn-prev" style="display: none;">← Předchozí</button>
                     <button id="btn-back-to-summary" style="display: none;">Zpět na přehled</button>
                 </div>
-                <h2 id="question-text">Tady se brzy objeví první otázka!</h2>
+                
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <p id="progress-text">Otázka 1 z 28</p>
+
+                <h2 id="question-text" class="fade-transition">Tady se brzy objeví první otázka!</h2>
                 <div class="buttons">
                     <button id="btn-yes">ANO</button>
                     <button id="btn-rather-yes">spíše ANO</button>
                     <button id="btn-neutral">neutrální</button>
                     <button id="btn-rather-no">spíše NE</button>
                     <button id="btn-no">NE</button>
-                    <button id="btn-skip">nemáme stanovisko</button>
+                    <button id="btn-skip">nevím</button>
                 </div>
             </div>
 
-            <!-- Stránka pro shrnutí a kontrolu odpovědí před výsledky -->
+            <!-- Stránka pro shrnutí a kontrolu odpovědí -->
             <div id="summary-container" style="display: none;">
                 <h2>Kontrola vašich odpovědí</h2>
                 <p class="intro-text" style="font-size: 0.95rem;">Zde si můžete zkontrolovat své odpovědi. Kliknutím na libovolnou otázku se k ní můžete vrátit a odpověď změnit.</p>
@@ -61,7 +83,7 @@
                 <button id="btn-show-results">ZOBRAZIT VÝSLEDKY</button>
             </div>
 
-            <!-- Detailní porovnání (na začátku skryté) -->
+            <!-- Detailní porovnání -->
             <div id="detail-container" style="display: none;">
                 <button id="btn-back">← Zpět na výsledky</button>
                 <h2 id="detail-title">Porovnání</h2>
