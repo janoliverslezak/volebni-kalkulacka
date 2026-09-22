@@ -166,13 +166,13 @@ button:active { transform: scale(0.98); }
 #btn-about:hover { background-color: #eff6ff; border-color: #93c5fd; }
 
 #btn-share {
-    background-color: #10b981;
+    background-color: #0f172a; /* Změněno na elegantní tmavou, ať nemáme na webu žádnou zelenou */
     color: white;
     font-size: 1.1rem;
     margin-top: 30px;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
 }
-#btn-share:hover { background-color: #059669; transform: translateY(-2px); }
+#btn-share:hover { background-color: #1e293b; transform: translateY(-2px); }
 
 #btn-restart {
     background-color: transparent;
@@ -224,31 +224,31 @@ button:active { transform: scale(0.98); }
 }
 #btn-close-about:hover { background-color: #1e293b; }
 
-/* --- TLAČÍTKA ODPOVĚDÍ (Zcela nové kontrastní rozlišení) --- */
+/* --- TLAČÍTKA ODPOVĚDÍ (Modrá a fialová - bez psychologie správně/špatně) --- */
 
-/* ANO - Svěží smaragdová zeleň */
-#btn-yes { background-color: #10b981; color: white; border-color: #10b981; }
-#btn-yes:hover { background-color: #059669; }
+/* ANO - Svěží královská modrá */
+#btn-yes { background-color: #2563eb; color: white; border-color: #2563eb; }
+#btn-yes:hover { background-color: #1d4ed8; }
 
-/* spíše ANO - Velmi jemný pastelový zelený podklad */
-#btn-rather-yes { background-color: #d1fae5; color: #047857; border-color: #a7f3d0; }
-#btn-rather-yes:hover { background-color: #a7f3d0; }
+/* spíše ANO - Jemný modrý podklad */
+#btn-rather-yes { background-color: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+#btn-rather-yes:hover { background-color: #dbeafe; }
 
 /* neutrální - Čistá neutrální šedá */
 #btn-neutral { background-color: #f1f5f9; color: #475569; border-color: #e2e8f0; }
 #btn-neutral:hover { background-color: #e2e8f0; }
 
-/* spíše NE - Velmi jemný pastelový malinový podklad */
-#btn-rather-no { background-color: #ffe4e6; color: #e11d48; border-color: #fecdd3; }
-#btn-rather-no:hover { background-color: #fecdd3; }
+/* spíše NE - Jemný fialový podklad */
+#btn-rather-no { background-color: #f5f3ff; color: #5b21b6; border-color: #ddd6fe; }
+#btn-rather-no:hover { background-color: #ede9fe; }
 
-/* NE - Moderní malinová / růžovo-červená (výrazný kontrast k zelené) */
-#btn-no { background-color: #f43f5e; color: white; border-color: #f43f5e; }
-#btn-no:hover { background-color: #e11d48; }
+/* NE - Moderní fialová/ametystová (čistý kontrast bez pocitu "chyby") */
+#btn-no { background-color: #8b5cf6; color: white; border-color: #8b5cf6; }
+#btn-no:hover { background-color: #7c3aed; }
 
 /* Tlačítko nevím / přeskočit */
-#btn-skip { background-color: transparent; color: #2563eb; border: 2px solid #cbd5e1; margin-top: 15px; }
-#btn-skip:hover { background-color: #eff6ff; border-color: #93c5fd; }
+#btn-skip { background-color: transparent; color: #475569; border: 2px solid #cbd5e1; margin-top: 15px; }
+#btn-skip:hover { background-color: #f1f5f9; color: #0f172a; }
 
 
 #summary-list {
@@ -344,7 +344,7 @@ button:active { transform: scale(0.98); }
 }
 .answer-badge { font-weight: 700; }
 
-/* Barvy shody v detailu upravené na novou paletu */
-.match-good { color: #10b981; } /* Smaragdová shoda */
-.match-bad { color: #f43f5e; }  /* Malinový rozpor */
+/* Barvy shody v detailu sjednocené s novou paletou */
+.match-good { color: #2563eb; } /* Modrá pro shodu */
+.match-bad { color: #8b5cf6; }  /* Fialová pro rozpor */
 .match-neutral { color: #94a3b8; }
