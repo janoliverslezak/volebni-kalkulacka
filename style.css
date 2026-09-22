@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #2c3e50;
+    background-color: #f8fafc; /* Velmi lehký, vzdušný podklad */
+    color: #1e293b;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -21,11 +21,11 @@ body {
     background: #ffffff;
     width: 100%;
     max-width: 650px;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
     overflow: hidden;
-    border-top: 6px solid #008080; /* Živá petrolejová / teal na vrchu */
+    border-top: 6px solid #2563eb; /* Svěží královská modrá */
 }
 
 /* Animace a přechody */
@@ -41,7 +41,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: 3px solid #ff7f50; /* Živá korálově oranžová */
+    border-bottom: 2px solid #f1f5f9;
 }
 
 .question-image {
@@ -49,7 +49,7 @@ body {
     height: 240px;
     object-fit: cover;
     display: block;
-    border-bottom: 3px solid #ff7f50;
+    border-bottom: 2px solid #f1f5f9;
 }
 
 .content-padding {
@@ -70,20 +70,20 @@ body {
 .campaign-slogan {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #008080;
-    background-color: #e6f2f2;
-    padding: 15px;
-    border-radius: 6px;
+    color: #1e293b;
+    background-color: #eff6ff;
+    padding: 16px;
+    border-radius: 8px;
     margin-bottom: 20px;
     font-style: italic;
-    border-left: 4px solid #ff7f50;
+    border-left: 4px solid #2563eb;
 }
 
 #intro-container h1, h2#question-text, h2#detail-title, #about-modal h2, #summary-container h2 {
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #008080;
+    color: #0f172a;
 }
 
 #intro-container h1, #about-modal h2, #summary-container h2 { font-size: 1.8rem; margin-bottom: 15px; }
@@ -91,23 +91,23 @@ h2#question-text { line-height: 1.5; min-height: 80px; margin-top: 10px; }
 
 #progress-container {
     width: 100%;
-    background-color: #e4e9f0;
+    background-color: #f1f5f9;
     border-radius: 8px;
-    height: 8px;
+    height: 6px;
     margin-bottom: 8px;
     overflow: hidden;
 }
 
 #progress-bar {
     height: 100%;
-    background-color: #008080;
+    background-color: #2563eb;
     width: 0%;
     transition: width 0.4s ease;
 }
 
 #progress-text {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: #64748b;
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -116,7 +116,7 @@ h2#question-text { line-height: 1.5; min-height: 80px; margin-top: 10px; }
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #4a5568;
+    color: #475569;
     text-align: left;
 }
 
@@ -138,7 +138,7 @@ button {
     font-size: 1rem;
     font-weight: 600;
     border: 2px solid transparent;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
     width: 100%;
@@ -149,39 +149,39 @@ button {
 button:active { transform: scale(0.98); }
 
 #btn-start, #btn-show-results {
-    background-color: #008080;
+    background-color: #2563eb; /* Hlavní modrá */
     color: white;
     font-size: 1.15rem;
     padding: 18px 20px;
-    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.25);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
     margin-top: 15px;
 }
-#btn-start:hover, #btn-show-results:hover { background-color: #006666; transform: translateY(-2px); }
+#btn-start:hover, #btn-show-results:hover { background-color: #1d4ed8; transform: translateY(-2px); }
 
 #btn-about {
     background-color: transparent;
-    color: #008080;
-    border: 2px solid #008080;
+    color: #2563eb;
+    border: 2px solid #cbd5e1;
 }
-#btn-about:hover { background-color: #e6f2f2; }
+#btn-about:hover { background-color: #eff6ff; border-color: #93c5fd; }
 
 #btn-share {
-    background-color: #27ae60;
+    background-color: #10b981;
     color: white;
     font-size: 1.1rem;
     margin-top: 30px;
-    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
 }
-#btn-share:hover { background-color: #219653; transform: translateY(-2px); }
+#btn-share:hover { background-color: #059669; transform: translateY(-2px); }
 
 #btn-restart {
     background-color: transparent;
-    color: #008080;
-    border: 2px solid #008080;
+    color: #475569;
+    border: 2px solid #cbd5e1;
     font-size: 1.1rem;
     margin-top: 15px;
 }
-#btn-restart:hover { background-color: #e6f2f2; transform: translateY(-2px); }
+#btn-restart:hover { background-color: #f1f5f9; color: #0f172a; }
 
 .nav-buttons-top {
     display: flex;
@@ -192,20 +192,20 @@ button:active { transform: scale(0.98); }
 
 #btn-prev, #btn-back-to-summary {
     background-color: transparent;
-    color: #008080;
-    border: 2px solid #008080;
+    color: #475569;
+    border: 2px solid #cbd5e1;
     padding: 8px 12px;
     font-size: 0.85rem;
     width: auto;
     flex: 1;
 }
-#btn-prev:hover, #btn-back-to-summary:hover { background-color: #e6f2f2; }
+#btn-prev:hover, #btn-back-to-summary:hover { background-color: #f1f5f9; color: #0f172a; }
 
 .about-text {
     text-align: left;
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #4a5568;
+    color: #475569;
     margin-bottom: 25px;
     display: flex;
     flex-direction: column;
@@ -213,42 +213,42 @@ button:active { transform: scale(0.98); }
 }
 
 .about-text a {
-    color: #008080;
+    color: #2563eb;
     font-weight: 600;
     text-decoration: underline;
 }
 
 #btn-close-about {
-    background-color: #008080;
+    background-color: #0f172a;
     color: white;
 }
-#btn-close-about:hover { background-color: #006666; }
+#btn-close-about:hover { background-color: #1e293b; }
 
-/* --- TLAČÍTKA ODPOVĚDÍ (Živá, moderní paleta) --- */
+/* --- TLAČÍTKA ODPOVĚDÍ (Zcela nové kontrastní rozlišení) --- */
 
-/* ANO - Výrazná petrolejová / teal */
-#btn-yes { background-color: #008080; color: white; border-color: #008080; }
-#btn-yes:hover { background-color: #006666; }
+/* ANO - Svěží smaragdová zeleň */
+#btn-yes { background-color: #10b981; color: white; border-color: #10b981; }
+#btn-yes:hover { background-color: #059669; }
 
-/* spíše ANO - Světlý petrolejový nádech */
-#btn-rather-yes { background-color: #e6f2f2; color: #006666; border-color: #008080; }
-#btn-rather-yes:hover { background-color: #cce6e6; }
+/* spíše ANO - Velmi jemný pastelový zelený podklad */
+#btn-rather-yes { background-color: #d1fae5; color: #047857; border-color: #a7f3d0; }
+#btn-rather-yes:hover { background-color: #a7f3d0; }
 
-/* neutrální - Čistá světle šedá */
-#btn-neutral { background-color: #f8f9fa; color: #6c757d; border-color: #dee2e6; }
-#btn-neutral:hover { background-color: #e9ecef; }
+/* neutrální - Čistá neutrální šedá */
+#btn-neutral { background-color: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+#btn-neutral:hover { background-color: #e2e8f0; }
 
-/* spíše NE - Světlý oranžový nádech */
-#btn-rather-no { background-color: #fff5f0; color: #d35400; border-color: #ff7f50; }
-#btn-rather-no:hover { background-color: #ffe8e0; }
+/* spíše NE - Velmi jemný pastelový malinový podklad */
+#btn-rather-no { background-color: #ffe4e6; color: #e11d48; border-color: #fecdd3; }
+#btn-rather-no:hover { background-color: #fecdd3; }
 
-/* NE - Živá korálově oranžová */
-#btn-no { background-color: #ff7f50; color: white; border-color: #ff7f50; }
-#btn-no:hover { background-color: #e66b3d; }
+/* NE - Moderní malinová / růžovo-červená (výrazný kontrast k zelené) */
+#btn-no { background-color: #f43f5e; color: white; border-color: #f43f5e; }
+#btn-no:hover { background-color: #e11d48; }
 
 /* Tlačítko nevím / přeskočit */
-#btn-skip { background-color: transparent; color: #008080; border: 2px solid #008080; margin-top: 15px; }
-#btn-skip:hover { background-color: #e6f2f2; }
+#btn-skip { background-color: transparent; color: #2563eb; border: 2px solid #cbd5e1; margin-top: 15px; }
+#btn-skip:hover { background-color: #eff6ff; border-color: #93c5fd; }
 
 
 #summary-list {
@@ -260,27 +260,27 @@ button:active { transform: scale(0.98); }
 }
 
 .summary-item {
-    background: #f8f9fa;
-    border: 1px solid #e0e0e0;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     padding: 12px;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: all 0.2s;
 }
 .summary-item:hover {
-    border-color: #008080;
-    background: #e6f2f2;
+    border-color: #2563eb;
+    background: #eff6ff;
 }
 .summary-q {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #1e293b;
     margin-bottom: 4px;
 }
 .summary-a {
     font-size: 0.9rem;
-    color: #008080;
+    color: #2563eb;
     font-weight: 700;
 }
 
@@ -288,43 +288,44 @@ button:active { transform: scale(0.98); }
     background: #ffffff;
     margin: 12px 0;
     padding: 18px;
-    border-radius: 6px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     font-size: 1.15rem;
     font-weight: 600;
-    border: 1px solid #e0e0e0;
-    border-left: 6px solid #008080;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    border-left: 6px solid #2563eb;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.01);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 #question-container p.result-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.08);
-    border-left-color: #ff7f50;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    border-left-color: #1d4ed8;
 }
 
 #btn-back {
     background-color: transparent;
-    color: #008080;
-    border: 2px solid #008080;
+    color: #475569;
+    border: 2px solid #cbd5e1;
     margin-bottom: 25px;
     padding: 12px;
+    border-radius: 8px;
 }
-#btn-back:hover { background-color: #e6f2f2; }
+#btn-back:hover { background-color: #f1f5f9; color: #0f172a; }
 
 .comparison-item {
     text-align: left;
     margin-bottom: 15px;
     padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f1f5f9;
 }
 .comparison-question {
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 0.95rem;
-    color: #2c3e50;
+    color: #1e293b;
     line-height: 1.4;
 }
 .comparison-answers {
@@ -337,13 +338,13 @@ button:active { transform: scale(0.98); }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 10px;
-    border-radius: 4px;
-    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #f8fafc;
 }
 .answer-badge { font-weight: 700; }
 
-/* Barvy shody v detailu */
-.match-good { color: #008080; } 
-.match-bad { color: #d35400; }  
-.match-neutral { color: #95a5a6; }
+/* Barvy shody v detailu upravené na novou paletu */
+.match-good { color: #10b981; } /* Smaragdová shoda */
+.match-bad { color: #f43f5e; }  /* Malinový rozpor */
+.match-neutral { color: #94a3b8; }
