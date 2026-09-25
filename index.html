@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volební kalkulačka Černošice 2026</title>
     
+    <!-- Karta pro sociální sítě -->
     <meta property="og:title" content="Volební kalkulačka Černošice 2026">
     <meta property="og:description" content="Zjistěte, jak se vaše názory na rozvoj a budoucnost Černošic shodují s postoji kandidujících sdružení.">
+    <!-- Až budeš mít skutečnou adresu na GitHubu, doplň ji sem místo "TVOJE_ADRESA": -->
     <meta property="og:image" content="https://TVOJE_ADRESA.github.io/volebni-kalkulacka/IMG-20260908-WA0012.jpg">
     <meta property="og:url" content="https://TVOJE_ADRESA.github.io/volebni-kalkulacka/">
     <meta property="og:type" content="website">
@@ -15,9 +17,11 @@
 </head>
 <body>
     <div class="container">
+        <!-- Hlavní banner nahoře -->
         <img id="main-image" src="IMG-20260908-WA0012.jpg" alt="Trojlístek Černošice" class="header-image fade-transition">
         
         <div class="content-padding">
+            <!-- Úvodní obrazovka -->
             <div id="intro-container">
                 <div class="campaign-logo-wrapper">
                     <img src="logo.png" alt="Logo Trojlístek" class="intro-logo">
@@ -35,6 +39,7 @@
                 </div>
             </div>
 
+            <!-- Vyskakovací okno "O kalkulačce" -->
             <div id="about-modal" style="display: none;">
                 <h2>O volební kalkulačce</h2>
                 <div class="about-text">
@@ -45,17 +50,21 @@
                     <p>Navštivte náš oficiální web: <a href="https://trojlistek-cernosice.cz/" target="_blank">trojlistek-cernosice.cz</a></p>
                 </div>
                 
+                <!-- Přehledová tabulka odpovědí -->
                 <h3 class="table-title">Přehled odpovědí</h3>
                 <div class="table-responsive">
                     <table id="answers-table">
+                        <!-- Obsah se generuje dynamicky pomocí JavaScriptu -->
                     </table>
                 </div>
 
                 <button id="btn-close-about">Zpět na úvod</button>
             </div>
 
+            <!-- Samotná kalkulačka (na začátku skrytá) -->
             <div id="question-container" style="display: none;">
                 <div class="nav-buttons-top">
+                    <!-- Nové tlačítko pro restart -->
                     <button id="btn-restart-calc">⭯ Začít znovu</button>
                     <button id="btn-prev" style="display: none;">← Předchozí</button>
                     <button id="btn-back-to-summary" style="display: none;">Zpět na přehled</button>
@@ -64,6 +73,7 @@
                 <div id="progress-container">
                     <div id="progress-bar"></div>
                 </div>
+                <!-- Aktualizováno na 32 otázek -->
                 <p id="progress-text">Otázka 1 z 32</p>
 
                 <h2 id="question-text" class="fade-transition">Tady se brzy objeví první otázka!</h2>
@@ -77,6 +87,7 @@
                 </div>
             </div>
 
+            <!-- Stránka pro shrnutí a kontrolu odpovědí -->
             <div id="summary-container" style="display: none;">
                 <h2>Kontrola vašich odpovědí</h2>
                 <p class="intro-text" style="font-size: 0.95rem;">Zde si můžete zkontrolovat své odpovědi. Kliknutím na libovolnou otázku se k ní můžete vrátit a odpověď změnit.</p>
@@ -84,6 +95,7 @@
                 <button id="btn-show-results">ZOBRAZIT VÝSLEDKY</button>
             </div>
 
+            <!-- Detailní porovnání -->
             <div id="detail-container" style="display: none;">
                 <button id="btn-back">← Zpět na výsledky</button>
                 <h2 id="detail-title">Porovnání</h2>
