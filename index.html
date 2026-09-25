@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volební kalkulačka Černošice 2026</title>
     
-    <!-- Karta pro sociální sítě -->
     <meta property="og:title" content="Volební kalkulačka Černošice 2026">
     <meta property="og:description" content="Zjistěte, jak se vaše názory na rozvoj a budoucnost Černošic shodují s postoji kandidujících sdružení.">
     <meta property="og:image" content="https://TVOJE_ADRESA.github.io/volebni-kalkulacka/IMG-20260908-WA0012.jpg">
@@ -16,45 +15,48 @@
 </head>
 <body>
     <div class="container">
-        <!-- Hlavní banner nahoře -->
         <img id="main-image" src="IMG-20260908-WA0012.jpg" alt="Trojlístek Černošice" class="header-image fade-transition">
         
         <div class="content-padding">
-            <!-- Úvodní obrazovka -->
             <div id="intro-container">
-                <!-- Vložení reálného loga -->
                 <div class="campaign-logo-wrapper">
                     <img src="logo.png" alt="Logo Trojlístek" class="intro-logo">
                 </div>
                 
                 <h1 id="main-title">Volební kalkulačka 2026</h1>
                 
-                <!-- Chytlavý kampaňový slogan -->
                 <p class="campaign-slogan">"Volte s přehledem. Zjistěte, kdo má opravdu stejné názory na rozvoj našeho města jako vy!"</p>
                 
-                <p class="intro-text">Připravili jsme pro vás 28 klíčových otázek vycházejících z reálných témat Černošic, Mokropes a Vráže. Porovnejte svůj pohled s programy kandidujících sdružení.</p>
+                <p class="intro-text">Připravili jsme pro vás 32 klíčových otázek vycházejících z reálných témat Černošic, Mokropes a Vráže. Porovnejte svůj pohled s programy kandidujících sdružení.</p>
                 
                 <div class="intro-buttons">
-                    <button id="btn-start">ZAČÍT KALKULAČKU</button>
+                    <button id="btn-start">SPUSTIT KALKULAČKU</button>
                     <button id="btn-about">O volební kalkulačce</button>
                 </div>
             </div>
 
-            <!-- Vyskakovací okno "O kalkulačce" -->
             <div id="about-modal" style="display: none;">
                 <h2>O volební kalkulačce</h2>
                 <div class="about-text">
                     <p><strong>Kdo za tím stojí:</strong> Iniciátorem a tvůrcem této kalkulačky je sdružení <strong>Trojlístek</strong>.</p>
                     <p><strong>Nezávislost dat:</strong> Odpovědi všech zúčastněných stran a sdružení jsou přebírány tak, jak byly dodány – nejsou z naší strany nijak upravováni ani cenzurováni.</p>
+                    <p><strong>Metodika výpočtu:</strong> Shoda se počítá na základě „vzdálenosti“ vaší odpovědi od odpovědi politické strany. Za naprosto stejnou odpověď získáváte maximum bodů. Čím více se váš postoj liší, tím méně bodů se přičte. Odpověď <strong>„neutrální“</strong> funguje jako střední cesta a porovnává se s názorem strany. Pokud ale vy nebo politická strana zvolíte možnost <strong>„nevím“</strong>, daná otázka se z výpočtu zcela vyřadí – nepřičítají se za ni body, ale ani nezvyšuje celkový základ pro výpočet procent. Výsledek tak přesně odráží pouze témata, u kterých existuje jasný názor.</p>
                     <p><strong>Účel:</strong> Hlavním cílem je zpřehlednit volební programy a pomoci voličům zorientovat se v názorech jednotlivých kandidátů pro komunální volby konané <strong>9. – 10. října</strong>.</p>
                     <p>Navštivte náš oficiální web: <a href="https://trojlistek-cernosice.cz/" target="_blank">trojlistek-cernosice.cz</a></p>
                 </div>
+                
+                <h3 class="table-title">Přehled odpovědí</h3>
+                <div class="table-responsive">
+                    <table id="answers-table">
+                    </table>
+                </div>
+
                 <button id="btn-close-about">Zpět na úvod</button>
             </div>
 
-            <!-- Samotná kalkulačka (na začátku skrytá) -->
             <div id="question-container" style="display: none;">
                 <div class="nav-buttons-top">
+                    <button id="btn-restart-calc">⭯ Začít znovu</button>
                     <button id="btn-prev" style="display: none;">← Předchozí</button>
                     <button id="btn-back-to-summary" style="display: none;">Zpět na přehled</button>
                 </div>
@@ -62,7 +64,7 @@
                 <div id="progress-container">
                     <div id="progress-bar"></div>
                 </div>
-                <p id="progress-text">Otázka 1 z 28</p>
+                <p id="progress-text">Otázka 1 z 32</p>
 
                 <h2 id="question-text" class="fade-transition">Tady se brzy objeví první otázka!</h2>
                 <div class="buttons">
@@ -75,7 +77,6 @@
                 </div>
             </div>
 
-            <!-- Stránka pro shrnutí a kontrolu odpovědí -->
             <div id="summary-container" style="display: none;">
                 <h2>Kontrola vašich odpovědí</h2>
                 <p class="intro-text" style="font-size: 0.95rem;">Zde si můžete zkontrolovat své odpovědi. Kliknutím na libovolnou otázku se k ní můžete vrátit a odpověď změnit.</p>
@@ -83,7 +84,6 @@
                 <button id="btn-show-results">ZOBRAZIT VÝSLEDKY</button>
             </div>
 
-            <!-- Detailní porovnání -->
             <div id="detail-container" style="display: none;">
                 <button id="btn-back">← Zpět na výsledky</button>
                 <h2 id="detail-title">Porovnání</h2>

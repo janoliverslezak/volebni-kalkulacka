@@ -1,14 +1,14 @@
 const otazky = [
-    "1. Město by mělo aktivně budovat a vlastnit nájemní byty určené zejména pro učitele, pracovníky města a další potřebné profese.",
+    "1. Město by mělo stavět a vlastnit nájemní byty pro vybrané potřebné profese i tehdy, pokud jejich výstavba vyžaduje významné financování z vlastního rozpočtu města.",
     "2. Projekt Viladomu pro učitele by měl pokračovat v současně připravené podobě.",
     "3. Město by mělo prosazovat spíše omezenou novou výstavbu a zachování současného charakteru Černošic, i kdyby to znamenalo omezení výstavby.",
     "4. Větší developerské projekty by měly být podmíněny finančním nebo jiným příspěvkem investora na veřejnou infrastrukturu.",
     "5. Město by mělo prostřednictvím územního plánu aktivně bránit dalšímu výraznému zahušťování stávající zástavby.",
-    "6. Město by mělo systematicky vykupovat pozemky důležité pro jeho budoucí rozvoj, i pokud pro ně zatím nemá konkrétní projekt.",
+    "6. Město by mělo spíše prodávat nepotřebné nemovitosti a pozemky a získané peníze investovat do rozvoje, než tento majetek dlouhodobě držet.",
     "7. Při rekonstrukcích ulic by město mělo systematicky budovat chodníky i za cenu omezení prostoru pro parkování automobilů.",
-    "8. Město by mělo více investovat do bezpečných cest dětí do školy, i kdyby to znamenalo další dopravní omezení v okolí škol.",
-    "9. V obci by měla být plošně zavedena zona 30 km/h.",
-    "10. Město by mělo zavést pravidelnou městskou autobusovou linku propojující jednotlivé části Černošic.",
+    "8. V bezprostředním okolí škol by město mělo omezovat vjezd a stání automobilů v době začátku a konce vyučování.",
+    "9. V celých Černošicích s výjimkou hlavních průjezdních komunikací by měla platit maximální rychlost 30 km/h.",
+    "10. Město by mělo zavést nové autobusové spoje s novými zastávkami, tak aby lépe propojily Černošice-Mokropsy - Vráž.",
     "11. Město by mělo usilovat o přímé autobusové spojení Černošic s Prahou jako alternativu k železnici.",
     "12. Město by mělo usilovat o obnovení přívozu mezi Černošicemi a Lipenci.",
     "13. Město by mělo aktivně podporovat sdílená kola, elektrokola a carsharing, včetně vyhrazení potřebných míst ve veřejném prostoru.",
@@ -16,31 +16,37 @@ const otazky = [
     "15. U velkých městských investic by měla být před schválením zveřejněna nejen cena stavby, ale také odhad budoucích provozních nákladů.",
     "16. Město by mělo u významných investic zveřejňovat varianty řešení ještě před tím, než rada vybere preferovanou variantu.",
     "17. Město by mělo při rozhodování o významných investicích upřednostnit dlouhodobou finanční udržitelnost před rychlostí jejich realizace.",
-    "18. Město by mělo finančně podporovat místní sportovní kluby a spolky ve větším rozsahu než dnes.",
-    "19. Město by mělo podporovat vznik veřejně přístupných sportovišť a míst pro volnočasové aktivity i pro obyvatele, kteří nejsou členy sportovních klubů.",
-    "20. Město by mělo aktivně podporovat vznik krajského gymnázia v Černošicích.",
-    "21. Město by mělo poskytovat větší finanční a organizační podporu místním kulturním a společenským akcím.",
-    "22. Pří úpravách veřejných prostranství by město mělo upřednostňovat výsadbu stromů a další zeleně, i kdyby to znamenalo omezení prostoru pro parkování.",
-    "23. Přírodní charakter okolí Berounky by měl mít přednost před budováním další sportovní a rekreační infrastruktury.",
-    "24. Město by mělo více investovat do opatření proti přehřívání města a lepšího hospodaření s dešťovou vodou, i za cenu omezení jiných investic.",
-    "25. Členové komisí a výborů města by měli být vybírání především podle odbornosti, nikoli podle politické příslušnosti.",
-    "26. Opozice by měla mít zastoupení ve vedení kontrolního a finančního výboru zastupitelstva.",
-    "27. U významných městských projektů by měla proběhnout veřejná diskuse s obyvateli a dotčenými skupinami.",
-    "28. Část městského rozpočtu by měla být každoročně vyčleněna na projekty, o jejichž využití rozhodnou přímo občané prostřednictvím participativního rozpočtu."
+    "18. Město by mělo být připraveno financovat strategické investice bankovním úvěrem, pokud mají dlouhodobý přínos nebo vlastní výnos.",
+    "19. Město by mělo finančně podporovat místní sportovní kluby a spolky ve větším rozsahu než dnes.",
+    "20. Město by mělo podporovat vznik veřejně přístupných sportovišť a míst pro volnočasové aktivity i pro obyvatele, kteří nejsou členy sportovních klubů.",
+    "21. Město by mělo podporovat vznik krajského gymnázia v Černošicích.",
+    "22. Město by mělo obnovit samostatný odbor kultury a sportu s vlastním rozpočtem.",
+    "23. Po uplynutí každého šestiletého období výkonu funkce ředitele městem zřízené školy nebo školského zařízení by město mělo vždy vyhlásit nový konkurs, i pokud je s dosavadním vedením spokojeno.",
+    "24. Při úpravách veřejných prostranství by město mělo upřednostňovat výsadbu stromů a další zeleně, i kdyby to znamenalo omezení prostoru pro parkování.",
+    "25. Přírodní charakter okolí Berounky by měl mít přednost před budováním další sportovní a rekreační infrastruktury.",
+    "26. Město by mělo více investovat do opatření proti přehřívání města a lepšího hospodaření s dešťovou vodou, i za cenu omezení jiných investic.",
+    "27. Členové komisí a výborů města by měli být vybíráni především podle odbornosti, nikoli podle politické příslušnosti.",
+    "28. Opozice by měla mít zastoupení ve vedení kontrolního a finančního výboru zastupitelstva.",
+    "29. U významných městských projektů by měla proběhnout veřejná diskuse s obyvateli a dotčenými skupinami.",
+    "30. Část městského rozpočtu by měla být každoročně vyčleněna na projekty, o jejichž využití rozhodnou přímo občané prostřednictvím participativního rozpočtu.",
+    "31. Město by mělo snížit místní koeficient daně z nemovitých věcí, i kdyby tím získalo méně peněz na investice a veřejné služby.",
+    "32. Zasedání zastupitelstva by měla být dostupná on-line."
 ];
 
+// DŮLEŽITÉ: Níže uvedené odpovědi mají dočasně 32 položek, ale neodpovídají nové sadě otázek!
+// Musíte ručně zkontrolovat a aktualizovat všech 32 odpovědí u každé strany podle nových podkladů.
 const strany = [
-    { nazev: "Trojlístek", odpovedi: [2, 1, -1, 2, 2, 0, 1, 2, -2, 1, 0, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 0, 2, 1] },
-    { nazev: "Věci Černošické", odpovedi: [-1, 2, 2, 1, 1, 1, -2, -1, -2, -1, 2, 0, -1, 2, 1, 1, 2, 2, 1, 1, 0, -1, 2, 1, 1, 1, 1, -1] },
-    { nazev: "TOP 09", odpovedi: [1, 1, -2, -1, 0, -1, 2, 1, 1, 2, -1, 2, 1, -1, 0, 1, 1, -1, -2, 0, 2, 1, -1, -2, 2, 2, 1, 2] },
-    { nazev: "ODS", odpovedi: [0, 0, 1, 2, 2, 2, 1, 2, 1, 0, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1] },
-    { nazev: "Futurista", odpovedi: [2, -1, -1, 0, -2, -1, -1, -1, 2, 1, -2, -1, 0, -1, 1, 0, 1, -2, 1, -1, -1, 0, -2, -1, 0, -1, -1, -2] }
+    { nazev: "Trojlístek", odpovedi: [2, 1, -1, 2, 2, 0, 1, 2, -2, 1, 0, 1, 2, 1, 2, 2, 1, 1, 2, 2, 1, 2, 1, 2, 2, 0, 2, 1, 0, 0, 0, 0] },
+    { nazev: "Věci Černošické", odpovedi: [-1, 2, 2, 1, 1, 1, -2, -1, -2, -1, 2, 0, -1, 2, 1, 1, 2, 2, 1, 1, 0, -1, 2, 1, 1, 1, 1, -1, 0, 0, 0, 0] },
+    { nazev: "TOP 09", odpovedi: [1, 1, -2, -1, 0, -1, 2, 1, 1, 2, -1, 2, 1, -1, 0, 1, 1, -1, -2, 0, 2, 1, -1, -2, 2, 2, 1, 2, 0, 0, 0, 0] },
+    { nazev: "ODS", odpovedi: [0, 0, 1, 2, 2, 2, 1, 2, 1, 0, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 2, 2, 2, 1, 1, 2, 1, 0, 0, 0, 0] },
+    { nazev: "Futurista", odpovedi: [2, -1, -1, 0, -2, -1, -1, -1, 2, 1, -2, -1, 0, -1, 1, 0, 1, -2, 1, -1, -1, 0, -2, -1, 0, -1, -1, -2, 0, 0, 0, 0] }
 ];
 
 const textOdpovedi = {
     2: "ANO",
     1: "spíše ANO",
-    0: "neutrální / nevím",
+    0: "neutrální",
     "-1": "spíše NE",
     "-2": "NE"
 };
@@ -67,6 +73,7 @@ const btnAbout = document.getElementById("btn-about");
 const btnCloseAbout = document.getElementById("btn-close-about");
 const btnPrev = document.getElementById("btn-prev");
 const btnBackToSummary = document.getElementById("btn-back-to-summary");
+const btnRestartCalc = document.getElementById("btn-restart-calc");
 const btnShowResults = document.getElementById("btn-show-results");
 const btnBack = document.getElementById("btn-back");
 const questionText = document.getElementById("question-text");
@@ -104,6 +111,24 @@ btnBack.addEventListener("click", () => {
     questionContainer.style.display = "block";
     mainImage.className = "header-image fade-transition";
     mainImage.src = "IMG-20260908-WA0012.jpg";
+});
+
+btnRestartCalc.addEventListener("click", () => {
+    if (confirm("Opravdu chcete začít úplně od začátku? Všechny vaše dosavadní odpovědi budou smazány.")) {
+        aktualniOtazka = 0;
+        odpovediUzivatele = [];
+        zPojmenovanehoPrehledu = false;
+        
+        questionContainer.style.display = "none";
+        introContainer.style.display = "block";
+        
+        progressBar.style.width = "0%";
+        progressBar.parentElement.style.display = "block";
+        progressText.style.display = "block";
+        
+        mainImage.className = "header-image fade-transition";
+        mainImage.src = "IMG-20260908-WA0012.jpg";
+    }
 });
 
 function zobrazOtazku() {
@@ -168,7 +193,7 @@ btnRatherYes.addEventListener("click", () => zaznamenejOdpoved(1));
 btnNeutral.addEventListener("click", () => zaznamenejOdpoved(0));
 btnRatherNo.addEventListener("click", () => zaznamenejOdpoved(-1));
 btnNo.addEventListener("click", () => zaznamenejOdpoved(-2));
-btnSkip.addEventListener("click", () => zaznamenejOdpoved(0));
+btnSkip.addEventListener("click", () => zaznamenejOdpoved(null));
 
 function zobrazShrnuti() {
     questionContainer.style.display = "none";
@@ -180,7 +205,9 @@ function zobrazShrnuti() {
     summaryList.innerHTML = "";
 
     for (let i = 0; i < otazky.length; i++) {
-        let ansText = textOdpovedi[odpovediUzivatele[i]] || "Nezadáno";
+        let hodnota = odpovediUzivatele[i];
+        let ansText = (hodnota === null) ? "nevím" : (textOdpovedi[hodnota] !== undefined ? textOdpovedi[hodnota] : "Nezadáno");
+        
         let item = document.createElement("div");
         item.className = "summary-item";
         item.innerHTML = `
@@ -218,7 +245,7 @@ function ukazVysledky() {
         let maximalniMoznaShoda = 0;
         
         for (let i = 0; i < otazky.length; i++) {
-            if (odpovediUzivatele[i] !== 0 && strana.odpovedi[i] !== 0) {
+            if (odpovediUzivatele[i] != null && strana.odpovedi[i] != null) {
                 maximalniMoznaShoda += 4; 
                 let vzdalenost = Math.abs(odpovediUzivatele[i] - strana.odpovedi[i]);
                 shoda += (4 - vzdalenost);
@@ -290,11 +317,15 @@ function zobrazDetail(nazevStrany) {
         let partyAns = strana.odpovedi[i];
         
         let matchClass = "match-neutral";
-        if (userAns !== 0 && partyAns !== 0) {
+        
+        if (userAns != null && partyAns != null) {
             let rozdil = Math.abs(userAns - partyAns);
             if (rozdil <= 1) matchClass = "match-good"; 
             else if (rozdil >= 3) matchClass = "match-bad"; 
         }
+
+        let userText = (userAns === null) ? "nevím" : textOdpovedi[userAns];
+        let partyText = (partyAns === null) ? "nevím" : textOdpovedi[partyAns];
 
         detailContent.innerHTML += `
             <div class="comparison-item">
@@ -302,14 +333,47 @@ function zobrazDetail(nazevStrany) {
                 <div class="comparison-answers">
                     <div class="answer-row">
                         <span>Tvoje odpověď:</span>
-                        <span class="answer-badge">${textOdpovedi[userAns]}</span>
+                        <span class="answer-badge">${userText}</span>
                     </div>
                     <div class="answer-row">
                         <span>${nazevStrany}:</span>
-                        <span class="answer-badge ${matchClass}">${textOdpovedi[partyAns]}</span>
+                        <span class="answer-badge ${matchClass}">${partyText}</span>
                     </div>
                 </div>
             </div>
         `;
     }
 }
+
+function vygenerujTabulkuOdpovedi() {
+    const table = document.getElementById("answers-table");
+    if (!table) return;
+
+    let html = "<thead><tr><th>Ot.</th>";
+    strany.forEach(s => {
+        html += `<th>${s.nazev}</th>`;
+    });
+    html += "</tr></thead><tbody>";
+
+    const textZkratky = {
+        2: "ANO",
+        1: "spíše ANO",
+        0: "neutrální",
+        "-1": "spíše NE",
+        "-2": "NE"
+    };
+
+    for (let i = 0; i < otazky.length; i++) {
+        html += `<tr><td>${i + 1}.</td>`;
+        strany.forEach(s => {
+            let ans = s.odpovedi[i];
+            let text = (ans === null) ? "nevím" : textZkratky[ans];
+            html += `<td>${text}</td>`;
+        });
+        html += "</tr>";
+    }
+    html += "</tbody>";
+    table.innerHTML = html;
+}
+
+vygenerujTabulkuOdpovedi();
